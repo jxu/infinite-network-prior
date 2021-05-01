@@ -34,12 +34,12 @@ one_layer_nn <- function(x, hidden_dim, output_dim) {
 
 # 1D output
 x <- rep(1,10)
-sim_1d_5 <- data.frame(x=replicate(1000, one_layer_nn(x, 5, 1)))
+sim_1d_5 <- data.frame(x=replicate(10000, one_layer_nn(x, 5, 1)))
 ggplot(sim_1d_5, aes(x = x)) +
   geom_density()
 
-sim_1d_100 <- data.frame(x=replicate(1000, one_layer_nn(x, 100, 1)))
-ggplot(sim_1d_100, aes(x = x)) +
+sim_1d_1000 <- data.frame(x=replicate(10000, one_layer_nn(x, 1000, 1)))
+ggplot(sim_1d_1000, aes(x = x)) +
   geom_density()
 
 
